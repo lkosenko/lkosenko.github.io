@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yelizaveta Kosenko — People Analytics, HR &amp; Talent Acquisition</title>
-<meta name="description" content="Yelizaveta Kosenko — MSc People Analytics candidate at UCL with 3+ years of full-cycle recruitment experience.">
+<meta name="description" content="Yelizaveta Kosenko — MSc People Analytics candidate at UCL with 3+ years of full-cycle recruitment experience and a background in accounting and international aviation.">
 <style>
   :root {
     --blue: #1d4e89;
     --blue-dark: #12345e;
+    --blue-mid: #2a64b0;
     --blue-light: #eaf1fa;
     --orange: #f28c28;
-    --orange-dark: #c96a0e;
+    --orange-mark: #d06a10;
+    --orange-dark: #b35a0b;
+    --orange-light: #fff3e6;
     --text: #1f2933;
     --muted: #52606d;
     --bg: #ffffff;
@@ -22,116 +25,158 @@
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1.65;
-    color: var(--text);
-    background: var(--bg);
+    font-size: 18px; line-height: 1.65; color: var(--text); background: var(--bg);
   }
   a { color: var(--blue); }
   a:hover { color: var(--orange-dark); }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  button { font: inherit; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 
   /* Nav */
-  nav {
-    position: sticky; top: 0; z-index: 10;
-    background: var(--blue-dark);
-  }
-  nav ul {
-    list-style: none; margin: 0 auto; padding: 0 24px;
-    max-width: 860px; display: flex; flex-wrap: wrap; gap: 4px 22px;
-  }
-  nav a {
-    display: inline-block; padding: 12px 0;
-    color: #fff; text-decoration: none; font-size: 15px; font-weight: 600;
-    border-bottom: 3px solid transparent;
-  }
-  nav a:hover, nav a:focus { color: #fff; border-bottom-color: var(--orange); }
+  nav { position: sticky; top: 0; z-index: 20; background: var(--blue-dark); }
+  nav ul { list-style: none; margin: 0 auto; padding: 0 24px; max-width: 980px; display: flex; flex-wrap: wrap; gap: 0 22px; }
+  nav a { display: inline-block; padding: 12px 0; color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; border-bottom: 3px solid transparent; }
+  nav a:hover, nav a:focus, nav a.active { color: #fff; border-bottom-color: var(--orange); }
 
   /* Header */
-  header {
-    background: var(--blue);
-    color: #fff;
-    padding: 64px 0 56px;
-    border-bottom: 6px solid var(--orange);
-  }
-  header h1 { margin: 0 0 8px; font-size: 44px; line-height: 1.15; }
-  header .tagline { margin: 0 0 16px; font-size: 20px; opacity: .95; }
-  header .meta { margin: 0 0 24px; font-size: 16px; opacity: .9; }
+  header { background: var(--blue); color: #fff; padding: 64px 0 56px; border-bottom: 6px solid var(--orange); }
+  header h1 { margin: 0 0 8px; font-size: 46px; line-height: 1.15; }
+  header .tagline { margin: 0 0 6px; font-size: 20px; opacity: .95; }
+  header .meta { margin: 0 0 22px; font-size: 16px; opacity: .85; }
+  .formula { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 18px; font-weight: 700; font-size: 17px; }
+  .formula .pill { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.35); padding: 6px 14px; border-radius: 999px; }
+  .formula .op { color: var(--orange); font-size: 22px; }
+  .formula .result { background: var(--orange); color: #1f2933; padding: 6px 14px; border-radius: 999px; }
+  .lead { max-width: 720px; margin: 0 0 26px; font-size: 18px; opacity: .95; }
   .btns { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn {
-    display: inline-block; padding: 11px 22px; border-radius: 6px;
-    font-weight: 700; font-size: 16px; text-decoration: none;
-  }
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 16px; text-decoration: none; }
   .btn-orange { background: var(--orange); color: #1f2933; }
   .btn-orange:hover { background: #ffa64d; color: #1f2933; }
   .btn-outline { border: 2px solid #fff; color: #fff; }
   .btn-outline:hover { background: #fff; color: var(--blue); }
 
   /* Sections */
-  section { padding: 52px 0; border-bottom: 1px solid var(--line); }
-  section:nth-of-type(even) { background: var(--blue-light); }
-  h2 {
-    margin: 0 0 24px; font-size: 28px; color: var(--blue-dark);
-    display: inline-block; border-bottom: 4px solid var(--orange); padding-bottom: 4px;
-  }
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section.alt { background: var(--blue-light); }
+  h2 { margin: 0 0 8px; font-size: 30px; color: var(--blue-dark); display: inline-block; border-bottom: 4px solid var(--orange); padding-bottom: 4px; }
+  .sub { margin: 6px 0 28px; color: var(--muted); }
   h3 { margin: 0; font-size: 20px; color: var(--blue-dark); }
 
-  /* Highlights */
-  .stats {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 16px; margin-top: 28px;
-  }
-  .stat {
-    background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--orange);
-    border-radius: 8px; padding: 16px 18px;
-  }
-  .stat strong { display: block; font-size: 28px; color: var(--blue); line-height: 1.2; }
-  .stat span { font-size: 15px; color: var(--muted); }
+  /* KPI tiles */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .stat { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--orange); border-radius: 8px; padding: 18px 18px 16px; }
+  .stat strong { display: block; font-size: 34px; color: var(--blue); line-height: 1.15; font-variant-numeric: tabular-nums; }
+  .stat span { display: block; font-size: 15px; color: var(--muted); margin-top: 4px; }
+  .stat small { display: block; font-size: 13px; color: var(--orange-dark); font-weight: 700; margin-top: 8px; text-transform: uppercase; letter-spacing: .04em; }
 
-  /* Timeline items */
-  .item { padding: 20px 0; border-top: 1px solid var(--line); }
-  .item:first-of-type { border-top: none; padding-top: 0; }
+  /* Venn */
+  .venn-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 32px; align-items: start; }
+  .venn svg { width: 100%; height: auto; display: block; }
+  .venn .zone { cursor: pointer; transition: opacity .2s, stroke-width .2s; }
+  .venn .zone:hover { opacity: .9; }
+  .venn .zone.on { stroke-width: 5; }
+  .venn text { pointer-events: none; font-family: inherit; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .tab { border: 2px solid var(--blue); background: #fff; color: var(--blue-dark); border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 700; }
+  .tab[aria-selected="true"] { background: var(--blue); color: #fff; }
+  .panel { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--orange); border-radius: 8px; padding: 20px 22px; min-height: 260px; }
+  .panel h3 { margin-bottom: 4px; }
+  .panel .from { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+  .panel ul { margin: 0; padding-left: 20px; }
+  .panel li { margin-bottom: 8px; }
+  .panel li::marker { color: var(--orange); }
+
+  /* How I work */
+  .traits { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+  .trait { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+  .trait .icon { width: 40px; height: 40px; border-radius: 50%; background: var(--orange-light); color: var(--orange-dark); display: grid; place-items: center; font-weight: 800; margin-bottom: 10px; }
+  .trait h3 { font-size: 18px; margin-bottom: 6px; }
+  .trait p { margin: 0; font-size: 16px; color: var(--muted); }
+
+  /* Timeline chart */
+  .chart-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px 18px 10px; position: relative; }
+  .chart-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .legend { display: flex; gap: 18px; font-size: 15px; color: var(--muted); }
+  .legend i { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin-right: 6px; }
+  .toggle { border: 1px solid var(--line); background: #fff; color: var(--blue-dark); border-radius: 6px; padding: 5px 12px; font-size: 14px; font-weight: 600; }
+  .toggle:hover { border-color: var(--blue); }
+  #timeline { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #timeline svg { width: 100%; min-width: 640px; height: auto; display: block; }
+  #timeline .bar { cursor: pointer; }
+  #timeline .hit { fill: transparent; cursor: pointer; }
+  #timeline .row:hover .bar, #timeline .row.on .bar { filter: brightness(1.12); }
+  #timeline .row.on .lbl { font-weight: 700; fill: var(--blue-dark); }
+  .tip { position: absolute; pointer-events: none; background: #fff; color: var(--text); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 18px rgba(18,52,94,.15); padding: 10px 12px; font-size: 14px; line-height: 1.45; max-width: 260px; opacity: 0; transition: opacity .12s; z-index: 5; }
+  .tip b { color: var(--blue-dark); display: block; }
+  .tip .d { color: var(--muted); }
+  table.tl { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0 10px; }
+  table.tl th, table.tl td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  table.tl th { color: var(--blue-dark); }
+  .swipe { display: none; }
+  @media (max-width: 680px) { .swipe { display: inline; } }
+  [hidden] { display: none !important; }
+
+  /* Experience filters */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+  .chip { border: 2px solid var(--blue); background: #fff; color: var(--blue-dark); border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 700; }
+  .chip[aria-pressed="true"] { background: var(--blue); color: #fff; }
+  .count { font-size: 15px; color: var(--muted); margin: 0 0 18px; }
+  .item { padding: 22px 0; border-top: 1px solid var(--line); }
+  .item:first-of-type { border-top: none; }
   .item-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
-  .date {
-    font-size: 15px; font-weight: 700; color: var(--orange-dark); white-space: nowrap;
-  }
+  .date { font-size: 15px; font-weight: 700; color: var(--orange-dark); white-space: nowrap; }
   .role { margin: 2px 0 8px; color: var(--muted); font-style: italic; }
   .note { margin: 0 0 8px; color: var(--muted); font-size: 16px; }
   .item ul { margin: 8px 0 0; padding-left: 22px; }
-  .item li { margin-bottom: 6px; }
+  .item li { margin-bottom: 8px; transition: opacity .2s, background .2s; border-radius: 4px; padding: 2px 6px; margin-left: -6px; }
   .item li::marker { color: var(--orange); }
+  .item li.dim { opacity: .3; }
+  .item li.hit { background: var(--orange-light); }
+  .item li .t { display: inline-block; font-size: 12px; font-weight: 700; color: var(--blue-mid); background: var(--blue-light); border-radius: 4px; padding: 0 6px; margin-left: 6px; vertical-align: 1px; }
 
-  /* Chart */
+  /* Chart image */
   figure { margin: 0; }
-  figure img {
-    display: block; max-width: 100%; height: auto; margin: 0 auto;
-    border: 1px solid var(--line); border-radius: 8px; background: #fff;
-  }
+  figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
 
-  /* Tags */
-  .tags { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
-  .tags li {
-    background: #fff; border: 1px solid var(--blue); color: var(--blue-dark);
-    border-radius: 999px; padding: 6px 14px; font-size: 16px;
-  }
+  /* Skills */
+  .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .group { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+  .group h3 { font-size: 18px; margin-bottom: 12px; }
+  .group h3 span { color: var(--orange-dark); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+  .tags li { background: var(--blue-light); color: var(--blue-dark); border-radius: 999px; padding: 5px 12px; font-size: 15px; }
+
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .plain { list-style: none; padding: 0; margin: 0; }
-  .plain li { padding: 6px 0; border-bottom: 1px solid var(--line); }
-  .plain li:last-child { border-bottom: none; }
-  .plain b { color: var(--blue-dark); }
+  .lang { margin-bottom: 14px; }
+  .lang-top { display: flex; justify-content: space-between; font-size: 16px; }
+  .lang-top b { color: var(--blue-dark); }
+  .meter { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 6px; }
+  .meter span { height: 10px; background: var(--line); border-radius: 3px; }
+  .meter span.f { background: var(--blue-mid); }
+  .edu-list { list-style: none; padding: 0; margin: 0; }
+  .edu-list li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .edu-list li:last-child { border-bottom: none; }
+  .edu-list b { color: var(--blue-dark); display: block; }
+  .edu-list span { color: var(--muted); font-size: 16px; }
+  .interests { display: flex; flex-wrap: wrap; gap: 12px; }
+  .interest { flex: 1 1 200px; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--orange); border-radius: 8px; padding: 14px 16px; font-weight: 600; color: var(--blue-dark); }
 
-  footer {
-    background: var(--blue-dark); color: #fff; padding: 36px 0; text-align: center;
-  }
+  footer { background: var(--blue-dark); color: #fff; padding: 40px 0; text-align: center; }
   footer a { color: #fff; }
   footer a:hover { color: var(--orange); }
   footer p { margin: 6px 0; }
 
-  @media (max-width: 640px) {
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  @media (max-width: 760px) {
     body { font-size: 17px; }
     header { padding: 44px 0 40px; }
     header h1 { font-size: 34px; }
-    .two-col { grid-template-columns: 1fr; }
+    .venn-grid, .two-col { grid-template-columns: 1fr; }
+    .panel { min-height: 0; }
   }
 </style>
 </head>
@@ -139,10 +184,12 @@
 
 <nav aria-label="Sections">
   <ul>
-    <li><a href="#about">About</a></li>
+    <li><a href="#numbers">In numbers</a></li>
+    <li><a href="#why">Why me</a></li>
+    <li><a href="#how">How I work</a></li>
+    <li><a href="#journey">Journey</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#chart">Chart</a></li>
-    <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -153,6 +200,13 @@
     <h1>Yelizaveta Kosenko</h1>
     <p class="tagline">MSc People Analytics Candidate | HR &amp; Talent Acquisition | Entry-Level / Graduate</p>
     <p class="meta">London, UK</p>
+    <div class="formula" aria-label="Data plus Recruitment plus International aviation equals People Analytics">
+      <span class="pill">Data</span><span class="op">+</span>
+      <span class="pill">Recruitment</span><span class="op">+</span>
+      <span class="pill">International aviation</span><span class="op">=</span>
+      <span class="result">People Analytics</span>
+    </div>
+    <p class="lead">Combines a data-driven approach to hiring with strong cross-cultural communication built in international aviation. Seeking an entry-level or graduate <strong>People Analytics, HR or Talent Acquisition role</strong> in London.</p>
     <div class="btns">
       <a class="btn btn-orange" href="mailto:lizakosenkoxx@gmail.com">Email me</a>
       <a class="btn btn-outline" href="http://linkedin.com/in/elizaveta-kosenko" target="_blank" rel="noopener">LinkedIn</a>
@@ -162,148 +216,218 @@
 
 <main>
 
-<section id="about">
+<!-- KPIs -->
+<section id="numbers">
   <div class="wrap">
-    <h2>About me</h2>
-    <p><strong>MSc People Analytics and Human-Centric Management</strong> candidate at UCL with 3+ years of full-cycle recruitment experience (US, Europe, LatAm) and hands-on data analysis and reporting from an earlier accounting background. Combines a data-driven approach to hiring with strong cross-cultural communication built in international aviation.</p>
-    <p>Built a Recruiting Researchers team from scratch (10 hires) and launched a new recruitment vertical. Quick to learn new areas and comfortable working with data and stakeholders. Seeking an entry-level or graduate <strong>People Analytics, HR or Talent Acquisition role</strong> in London.</p>
-
+    <h2>My career in numbers</h2>
+    <p class="sub">Key results from recruitment, data and aviation.</p>
     <div class="stats">
-      <div class="stat"><strong>3+ years</strong><span>full-cycle recruitment</span></div>
-      <div class="stat"><strong>10 hires</strong><span>Recruiting Researchers team built from scratch</span></div>
-      <div class="stat"><strong>30–35 days</strong><span>average time-to-hire</span></div>
-      <div class="stat"><strong>~500 flights</strong><span>nearly 3,000 flight hours</span></div>
+      <div class="stat reveal"><strong data-count="3" data-suffix="+ years">3+ years</strong><span>full-cycle recruitment experience (US, Europe, LatAm)</span><small>Recruitment</small></div>
+      <div class="stat reveal"><strong data-count="10" data-suffix=" hires">10 hires</strong><span>to build the Recruiting Researchers team from scratch</span><small>Initiative</small></div>
+      <div class="stat reveal"><strong>30–35 days</strong><span>average time-to-hire, after analysing sourcing and pipeline data</span><small>Data</small></div>
+      <div class="stat reveal"><strong>3 of 12</strong><span>specialist hires delivered for a brand-new recruitment vertical</span><small>New domain</small></div>
+      <div class="stat reveal"><strong>3–5 roles</strong><span>owned at the same time, end to end</span><small>Ownership</small></div>
+      <div class="stat reveal"><strong data-count="500" data-prefix="~">~500</strong><span>flights with a new multicultural crew on almost every flight</span><small>Teams</small></div>
+      <div class="stat reveal"><strong data-count="3000" data-prefix="~">~3,000</strong><span>flight hours in a high-pressure, time-critical operation</span><small>Pressure</small></div>
+      <div class="stat reveal"><strong data-count="3" data-suffix=" languages">3 languages</strong><span>English, Ukrainian and German</span><small>Communication</small></div>
     </div>
   </div>
 </section>
 
+<!-- Why me -->
+<section id="why" class="alt">
+  <div class="wrap">
+    <h2>Why me: three backgrounds, one role</h2>
+    <p class="sub">People Analytics sits where data, hiring and people meet. Click a circle to see the evidence behind each part.</p>
+    <div class="venn-grid">
+      <div class="venn">
+        <svg viewBox="0 0 420 390" role="img" aria-label="Venn diagram: Data, Recruitment and People and cultures overlap in People Analytics">
+          <circle class="zone" data-k="data" cx="150" cy="140" r="115" fill="#2a64b0" fill-opacity=".28" stroke="#2a64b0" stroke-width="2"/>
+          <circle class="zone" data-k="recruit" cx="270" cy="140" r="115" fill="#d06a10" fill-opacity=".25" stroke="#d06a10" stroke-width="2"/>
+          <circle class="zone" data-k="people" cx="210" cy="245" r="115" fill="#12345e" fill-opacity=".18" stroke="#12345e" stroke-width="2"/>
+          <circle class="zone" data-k="core" cx="210" cy="175" r="38" fill="#fff" stroke="#f28c28" stroke-width="3"/>
+          <text x="92" y="100" text-anchor="middle" font-size="17" font-weight="700" fill="#12345e">Data</text>
+          <text x="92" y="120" text-anchor="middle" font-size="12" fill="#12345e">Accounting &amp; Auditing</text>
+          <text x="328" y="100" text-anchor="middle" font-size="17" font-weight="700" fill="#7a3d06">Recruitment</text>
+          <text x="328" y="120" text-anchor="middle" font-size="12" fill="#7a3d06">3+ years, full cycle</text>
+          <text x="210" y="320" text-anchor="middle" font-size="17" font-weight="700" fill="#12345e">People &amp; cultures</text>
+          <text x="210" y="340" text-anchor="middle" font-size="12" fill="#12345e">International aviation</text>
+          <text x="210" y="172" text-anchor="middle" font-size="12" font-weight="800" fill="#12345e">People</text>
+          <text x="210" y="187" text-anchor="middle" font-size="12" font-weight="800" fill="#12345e">Analytics</text>
+        </svg>
+      </div>
+      <div>
+        <div class="tabs" role="tablist" aria-label="Background">
+          <button class="tab" role="tab" data-k="core" aria-selected="true">People Analytics</button>
+          <button class="tab" role="tab" data-k="data" aria-selected="false">Data</button>
+          <button class="tab" role="tab" data-k="recruit" aria-selected="false">Recruitment</button>
+          <button class="tab" role="tab" data-k="people" aria-selected="false">People &amp; cultures</button>
+        </div>
+        <div class="panel" id="venn-panel" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How I work -->
+<section id="how">
+  <div class="wrap">
+    <h2>How I work</h2>
+    <p class="sub">Each point is backed by something I have done.</p>
+    <div class="traits">
+      <div class="trait reveal"><div class="icon">1</div><h3>I take initiative</h3><p>Built the Recruiting Researchers team from scratch – owning the project end-to-end and hiring 10 team members.</p></div>
+      <div class="trait reveal"><div class="icon">2</div><h3>I learn new areas fast</h3><p>Selected as one of 5 to launch a brand-new recruitment vertical from zero; researched the domain independently.</p></div>
+      <div class="trait reveal"><div class="icon">3</div><h3>I use data to improve</h3><p>Analysed sourcing and pipeline data to reduce average time-to-hire to 30–35 days, and presented findings to stakeholders.</p></div>
+      <div class="trait reveal"><div class="icon">4</div><h3>I stay calm under pressure</h3><p>Calmly resolved sensitive and conflict situations with passengers and colleagues in a time-critical operation.</p></div>
+      <div class="trait reveal"><div class="icon">5</div><h3>I connect across cultures</h3><p>Worked with a new multicultural crew on almost every flight, quickly building trust and adapting my communication style.</p></div>
+      <div class="trait reveal"><div class="icon">6</div><h3>I get clarity from ambiguity</h3><p>Often started with limited briefs and drove to clarity through research and direct hiring-manager conversations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline chart -->
+<section id="journey" class="alt">
+  <div class="wrap">
+    <h2>My journey</h2>
+    <p class="sub">Education and work, 2014 to today. Hover over or tap a bar for details.<span class="swipe"> Swipe sideways to see the whole chart.</span></p>
+    <div class="chart-card">
+      <div class="chart-top">
+        <div class="legend">
+          <span><i style="background:#2a64b0"></i>Work</span>
+          <span><i style="background:#d06a10"></i>Education</span>
+        </div>
+        <button class="toggle" id="tl-toggle" aria-pressed="false">Show as table</button>
+      </div>
+      <div id="timeline"></div>
+      <table class="tl" id="tl-table" hidden>
+        <thead><tr><th>What</th><th>Where</th><th>Type</th><th>Dates</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="tip" id="tip" role="status"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
 <section id="experience">
   <div class="wrap">
     <h2>Work experience</h2>
+    <p class="sub">Filter by the skills an HR or People Analytics team looks for.</p>
+    <div class="filters" role="group" aria-label="Filter achievements">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="data" aria-pressed="false">Data &amp; analysis</button>
+      <button class="chip" data-f="rec" aria-pressed="false">Recruitment</button>
+      <button class="chip" data-f="init" aria-pressed="false">Initiative</button>
+      <button class="chip" data-f="ppl" aria-pressed="false">People &amp; communication</button>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
 
     <div class="item">
-      <div class="item-head">
-        <h3>NDA, Remote</h3>
-        <span class="date">May 2026 – Present</span>
-      </div>
+      <div class="item-head"><h3>NDA, Remote</h3><span class="date">May 2026 – Present</span></div>
       <p class="role">Freelance IT Recruiter</p>
       <ul>
-        <li>Sourcing and screening candidates for senior technical roles (AI/ML, backend architecture) for an international enterprise client.</li>
-        <li>Pursuing remotely alongside my MSc studies and communicating with the client on tight timelines.</li>
+        <li data-tags="rec">Sourcing and screening candidates for senior technical roles (AI/ML, backend architecture) for an international enterprise client.</li>
+        <li data-tags="ppl">Pursuing remotely alongside my MSc studies and communicating with the client on tight timelines.</li>
       </ul>
     </div>
 
     <div class="item">
-      <div class="item-head">
-        <h3>Qatar Airways, Doha, Qatar</h3>
-        <span class="date">Aug 2023 – Sep 2026</span>
-      </div>
+      <div class="item-head"><h3>Qatar Airways, Doha, Qatar</h3><span class="date">Aug 2023 – Sep 2026</span></div>
       <p class="role">Cabin Crew Member</p>
       <ul>
-        <li>Delivered high-level service to international passengers on almost 500 flights (nearly 3,000 flight hours), following strict safety and compliance procedures in a high-pressure, time-critical operation.</li>
-        <li>Worked with a new multicultural crew on almost every flight, quickly building trust and adapting communication style to keep the team effective.</li>
-        <li>Calmly resolved sensitive and conflict situations with passengers and colleagues, communicating in English, Ukrainian and German, and received positive feedback from passengers.</li>
+        <li data-tags="ppl">Delivered high-level service to international passengers on almost 500 flights (nearly 3,000 flight hours), following strict safety and compliance procedures in a high-pressure, time-critical operation.</li>
+        <li data-tags="ppl">Worked with a new multicultural crew on almost every flight, quickly building trust and adapting communication style to keep the team effective.</li>
+        <li data-tags="ppl">Calmly resolved sensitive and conflict situations with passengers and colleagues, communicating in English, Ukrainian and German, and received positive feedback from passengers.</li>
       </ul>
     </div>
 
     <div class="item">
-      <div class="item-head">
-        <h3>Dev.Pro, Kharkiv, Ukraine (Remote)</h3>
-        <span class="date">Feb 2020 – Jul 2023</span>
-      </div>
+      <div class="item-head"><h3>Dev.Pro, Kharkiv, Ukraine (Remote)</h3><span class="date">Feb 2020 – Jul 2023</span></div>
       <p class="role">Recruiter</p>
       <p class="note">Dev.Pro is an IT outsourcing company providing software development teams to US and European clients.</p>
       <ul>
-        <li>Owned full-cycle recruitment projects independently (sourcing, screening, stakeholder liaison) across 3–5 concurrent roles at a time, often starting with limited briefs and driving to clarity through research and direct hiring-manager conversations.</li>
-        <li>Took initiative to build the Recruiting Researchers team from scratch – owning the project end-to-end and successfully hiring 10 team members.</li>
-        <li>Selected as one of 5 to launch a brand-new recruitment vertical from zero; researched the domain independently and delivered 3 of 12 required specialist hires.</li>
-        <li>Analysed sourcing and pipeline data to reduce average time-to-hire to 30–35 days, and presented findings and process improvements to hiring managers and stakeholders.</li>
+        <li data-tags="rec ppl">Owned full-cycle recruitment projects independently (sourcing, screening, stakeholder liaison) across 3–5 concurrent roles at a time, often starting with limited briefs and driving to clarity through research and direct hiring-manager conversations.</li>
+        <li data-tags="rec init">Took initiative to build the Recruiting Researchers team from scratch – owning the project end-to-end and successfully hiring 10 team members.</li>
+        <li data-tags="rec init">Selected as one of 5 to launch a brand-new recruitment vertical from zero; researched the domain independently and delivered 3 of 12 required specialist hires.</li>
+        <li data-tags="data rec ppl">Analysed sourcing and pipeline data to reduce average time-to-hire to 30–35 days, and presented findings and process improvements to hiring managers and stakeholders.</li>
       </ul>
     </div>
 
     <div class="item">
-      <div class="item-head">
-        <h3>Productech Corporation, Kharkiv, Ukraine</h3>
-        <span class="date">May 2019 – Jan 2020</span>
-      </div>
+      <div class="item-head"><h3>Productech Corporation, Kharkiv, Ukraine</h3><span class="date">May 2019 – Jan 2020</span></div>
       <p class="role">Tax Accountant</p>
       <ul>
-        <li>Analysed large volumes of financial data and prepared reports across the US, Canada and Europe for fiscal authorities and auditors – early experience translating data into clear, stakeholder-ready reporting.</li>
+        <li data-tags="data ppl">Analysed large volumes of financial data and prepared reports across the US, Canada and Europe for fiscal authorities and auditors – early experience translating data into clear, stakeholder-ready reporting.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section id="chart">
+<!-- Chart image -->
+<section id="chart" class="alt">
   <div class="wrap">
     <h2>Chart</h2>
+    <div style="height:24px"></div>
     <figure>
       <img src="images/chart1.png" alt="Chart by Yelizaveta Kosenko" loading="lazy">
     </figure>
   </div>
 </section>
 
-<section id="education">
-  <div class="wrap">
-    <h2>Education</h2>
-
-    <div class="item">
-      <div class="item-head">
-        <h3>UCL School of Management, London, UK</h3>
-        <span class="date">Sep 2026 – Sep 2027</span>
-      </div>
-      <p class="role">MSc People Analytics and Human-Centric Management</p>
-    </div>
-
-    <div class="item">
-      <div class="item-head">
-        <h3>Kharkiv National University of Economics, Kharkiv, Ukraine</h3>
-        <span class="date">2018 – 2019</span>
-      </div>
-      <p class="role">Master's Degree, Accounting and Auditing</p>
-    </div>
-
-    <div class="item">
-      <div class="item-head">
-        <h3>Kharkiv National University of Economics, Kharkiv, Ukraine</h3>
-        <span class="date">2014 – 2018</span>
-      </div>
-      <p class="role">Bachelor's Degree, Accounting and Auditing</p>
-    </div>
-  </div>
-</section>
-
+<!-- Skills -->
 <section id="skills">
   <div class="wrap">
     <h2>Skills</h2>
-    <ul class="tags">
-      <li>Data analysis &amp; reporting (Excel)</li>
-      <li>Python analysis (Jupyter Notebook)</li>
-      <li>Data visualisation</li>
-      <li>People analytics</li>
-      <li>Research &amp; stakeholder presentations</li>
-      <li>Full-cycle recruitment &amp; project ownership</li>
-      <li>Candidate screening &amp; evaluation</li>
-      <li>Cross-cultural &amp; stakeholder communication</li>
-      <li>AI tools (Claude, ChatGPT) for research, drafting and data analysis – with critical review of outputs</li>
-      <li>Initiative in ambiguous, fast-paced settings</li>
-    </ul>
+    <p class="sub">My toolkit for People Analytics.</p>
+    <div class="skill-groups">
+      <div class="group reveal">
+        <h3><span>01</span> Analyse</h3>
+        <ul class="tags">
+          <li>Data analysis &amp; reporting (Excel)</li>
+          <li>Python analysis (Jupyter Notebook)</li>
+          <li>Data visualisation</li>
+          <li>People analytics</li>
+          <li>AI tools (Claude, ChatGPT) for research, drafting and data analysis – with critical review of outputs</li>
+        </ul>
+      </div>
+      <div class="group reveal">
+        <h3><span>02</span> Hire</h3>
+        <ul class="tags">
+          <li>Full-cycle recruitment &amp; project ownership</li>
+          <li>Candidate screening &amp; evaluation</li>
+        </ul>
+      </div>
+      <div class="group reveal">
+        <h3><span>03</span> Communicate &amp; lead</h3>
+        <ul class="tags">
+          <li>Research &amp; stakeholder presentations</li>
+          <li>Cross-cultural &amp; stakeholder communication</li>
+          <li>Initiative in ambiguous, fast-paced settings</li>
+        </ul>
+      </div>
+    </div>
 
-    <div class="two-col" style="margin-top:40px">
+    <div class="two-col" style="margin-top:48px">
       <div>
-        <h2>Languages</h2>
-        <ul class="plain">
-          <li><b>English</b> – Fluent</li>
-          <li><b>Ukrainian</b> – Native</li>
-          <li><b>German</b> – Conversational (B1)</li>
+        <h2>Education</h2>
+        <ul class="edu-list" style="margin-top:16px">
+          <li><b>UCL School of Management, London, UK</b>MSc People Analytics and Human-Centric Management<br><span>Sep 2026 – Sep 2027</span></li>
+          <li><b>Kharkiv National University of Economics, Kharkiv, Ukraine</b>Master's Degree, Accounting and Auditing<br><span>2018 – 2019</span></li>
+          <li><b>Kharkiv National University of Economics, Kharkiv, Ukraine</b>Bachelor's Degree, Accounting and Auditing<br><span>2014 – 2018</span></li>
         </ul>
       </div>
       <div>
-        <h2>Interests</h2>
-        <ul class="plain">
-          <li>Vlogging about aviation and career life</li>
-          <li>Running</li>
-        </ul>
+        <h2>Languages</h2>
+        <div style="margin-top:16px">
+          <div class="lang"><div class="lang-top"><b>Ukrainian</b><span>Native</span></div><div class="meter" aria-hidden="true"><span class="f"></span><span class="f"></span><span class="f"></span></div></div>
+          <div class="lang"><div class="lang-top"><b>English</b><span>Fluent</span></div><div class="meter" aria-hidden="true"><span class="f"></span><span class="f"></span><span class="f"></span></div></div>
+          <div class="lang"><div class="lang-top"><b>German</b><span>Conversational (B1)</span></div><div class="meter" aria-hidden="true"><span class="f"></span><span></span><span></span></div></div>
+        </div>
+        <h2 style="margin-top:28px">Beyond work</h2>
+        <div class="interests" style="margin-top:16px">
+          <div class="interest">Vlogging about aviation and career life</div>
+          <div class="interest">Running</div>
+        </div>
       </div>
     </div>
   </div>
@@ -313,11 +437,185 @@
 
 <footer id="contact">
   <div class="wrap">
-    <p><strong>Get in touch</strong></p>
+    <p style="font-size:22px"><strong>Let's talk about People Analytics, HR or Talent Acquisition roles in London</strong></p>
     <p><a href="mailto:lizakosenkoxx@gmail.com">lizakosenkoxx@gmail.com</a> · <a href="http://linkedin.com/in/elizaveta-kosenko" target="_blank" rel="noopener">LinkedIn</a></p>
-    <p>&copy; Yelizaveta Kosenko</p>
+    <p style="opacity:.8">&copy; Yelizaveta Kosenko</p>
   </div>
 </footer>
 
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Reveal + count-up ---------- */
+  function countUp(el) {
+    var target = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    if (reduce) return;
+    var start = null, dur = 1100;
+    function step(t) {
+      if (!start) start = t;
+      var p = Math.min((t - start) / dur, 1), v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      el.textContent = pre + v.toLocaleString('en-GB') + suf;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        var c = e.target.querySelector('[data-count]');
+        if (c) countUp(c);
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.2 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Venn ---------- */
+  var venn = {
+    core: { t: 'People Analytics', f: 'Where it all comes together',
+      li: ['MSc People Analytics and Human-Centric Management, UCL School of Management (Sep 2026 – Sep 2027).',
+           'Combines a data-driven approach to hiring with strong cross-cultural communication built in international aviation.',
+           'Quick to learn new areas and comfortable working with data and stakeholders.'] },
+    data: { t: 'Data', f: 'Accounting & Auditing · Productech · Dev.Pro',
+      li: ["Bachelor's and Master's Degree in Accounting and Auditing, Kharkiv National University of Economics.",
+           'As a Tax Accountant, analysed large volumes of financial data and prepared reports across the US, Canada and Europe for fiscal authorities and auditors.',
+           'Analysed sourcing and pipeline data to reduce average time-to-hire to 30–35 days.',
+           'Data analysis & reporting (Excel), Python analysis (Jupyter Notebook), data visualisation.'] },
+    recruit: { t: 'Recruitment', f: 'Dev.Pro · Freelance IT Recruiter',
+      li: ['3+ years of full-cycle recruitment experience (US, Europe, LatAm).',
+           'Owned 3–5 concurrent roles at a time: sourcing, screening and stakeholder liaison.',
+           'Built the Recruiting Researchers team from scratch – 10 hires.',
+           'Selected as one of 5 to launch a new recruitment vertical – delivered 3 of 12 specialist hires.',
+           'Now sourcing and screening for senior technical roles (AI/ML, backend architecture).'] },
+    people: { t: 'People & cultures', f: 'Qatar Airways · Cabin Crew Member',
+      li: ['Almost 500 flights and nearly 3,000 flight hours in a high-pressure, time-critical operation.',
+           'A new multicultural crew on almost every flight – quickly building trust and adapting communication style.',
+           'Calmly resolved sensitive and conflict situations with passengers and colleagues.',
+           'Communicating in English, Ukrainian and German.'] }
+  };
+  var panel = document.getElementById('venn-panel');
+  function showVenn(k) {
+    var d = venn[k];
+    panel.innerHTML = '<h3>' + d.t + '</h3><p class="from">' + d.f + '</p><ul>' +
+      d.li.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>';
+    document.querySelectorAll('.venn .zone').forEach(function (z) { z.classList.toggle('on', z.dataset.k === k); });
+    document.querySelectorAll('.tab').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.k === k ? 'true' : 'false'); });
+  }
+  document.querySelectorAll('.venn .zone, .tab').forEach(function (el) {
+    el.addEventListener('click', function () { showVenn(el.dataset.k); });
+  });
+  showVenn('core');
+
+  /* ---------- Timeline (Gantt) ---------- */
+  var now = new Date(), nowY = now.getFullYear() + now.getMonth() / 12;
+  function ym(y, m) { return y + (m - 1) / 12; }
+  var rows = [
+    { n: "Bachelor's, Accounting and Auditing", w: 'Kharkiv National University of Economics', type: 'edu', s: ym(2014,1), e: ym(2018,1), d: '2014 – 2018' },
+    { n: "Master's, Accounting and Auditing", w: 'Kharkiv National University of Economics', type: 'edu', s: ym(2018,1), e: ym(2019,1), d: '2018 – 2019' },
+    { n: 'Tax Accountant', w: 'Productech Corporation', type: 'work', s: ym(2019,5), e: ym(2020,2), d: 'May 2019 – Jan 2020' },
+    { n: 'Recruiter', w: 'Dev.Pro', type: 'work', s: ym(2020,2), e: ym(2023,8), d: 'Feb 2020 – Jul 2023' },
+    { n: 'Cabin Crew Member', w: 'Qatar Airways', type: 'work', s: ym(2023,8), e: ym(2026,10), d: 'Aug 2023 – Sep 2026' },
+    { n: 'Freelance IT Recruiter', w: 'NDA, Remote', type: 'work', s: ym(2026,5), e: Math.max(nowY, ym(2026,6)), d: 'May 2026 – Present' },
+    { n: 'MSc People Analytics', w: 'UCL School of Management', type: 'edu', s: ym(2026,9), e: ym(2027,10), d: 'Sep 2026 – Sep 2027' }
+  ];
+  function dur(r) {
+    var m = Math.round((r.e - r.s) * 12);
+    var y = Math.floor(m / 12), mm = m % 12, out = [];
+    if (y) out.push(y + (y === 1 ? ' year' : ' years'));
+    if (mm) out.push(mm + (mm === 1 ? ' month' : ' months'));
+    return out.join(' ');
+  }
+  var col = { work: '#2a64b0', edu: '#d06a10' };
+  var x0 = 2014, x1 = 2028;
+  var W = 900, labelW = 275, padR = 16, rowH = 38, top = 10, H = top + rows.length * rowH + 34;
+  function X(v) { return labelW + (v - x0) / (x1 - x0) * (W - labelW - padR); }
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Timeline of education and work from 2014 to 2027">';
+  for (var y = x0; y <= x1; y += 2) {
+    svg += '<line x1="' + X(y) + '" x2="' + X(y) + '" y1="' + top + '" y2="' + (H - 26) + '" stroke="#e4e9f0" stroke-width="1"/>' +
+           '<text x="' + X(y) + '" y="' + (H - 8) + '" text-anchor="middle" font-size="13" fill="#52606d">' + y + '</text>';
+  }
+  rows.forEach(function (r, i) {
+    var yy = top + i * rowH, bx = X(r.s), bw = Math.max(X(r.e) - X(r.s), 6);
+    svg += '<g class="row" data-i="' + i + '" tabindex="0" role="button" aria-label="' + r.n + ', ' + r.w + ', ' + r.d + '">' +
+      '<rect class="hit" x="0" y="' + yy + '" width="' + W + '" height="' + rowH + '"/>' +
+      '<text class="lbl" x="' + (labelW - 12) + '" y="' + (yy + rowH / 2 + 5) + '" text-anchor="end" font-size="14" fill="#1f2933">' + r.n + '</text>' +
+      '<rect class="bar" x="' + bx + '" y="' + (yy + 9) + '" width="' + bw + '" height="' + (rowH - 18) + '" rx="4" fill="' + col[r.type] + '"/>' +
+      '</g>';
+  });
+  var tx = X(nowY);
+  svg += '<line x1="' + tx + '" x2="' + tx + '" y1="' + (top - 4) + '" y2="' + (H - 26) + '" stroke="#12345e" stroke-width="2" stroke-dasharray="4 4"/>' +
+         '<text x="' + (tx - 6) + '" y="' + (top + 4) + '" text-anchor="end" font-size="12" font-weight="700" fill="#12345e">Today</text>';
+  svg += '</svg>';
+  var tl = document.getElementById('timeline'); tl.innerHTML = svg;
+
+  var tip = document.getElementById('tip'), card = tip.parentElement;
+  function showTip(g, evt) {
+    var r = rows[+g.dataset.i];
+    tip.innerHTML = '<b>' + r.n + '</b>' + r.w + '<br><span class="d">' + r.d + (r.type === 'work' ? ' · ' + dur(r) + (r.d.indexOf('Present') > -1 ? ' so far' : '') : '') + '</span>';
+    tip.style.opacity = 1;
+    var cr = card.getBoundingClientRect(), bar = g.querySelector('.bar').getBoundingClientRect();
+    var left = (evt && evt.clientX ? evt.clientX : bar.left + bar.width / 2) - cr.left + 14;
+    left = Math.min(left, cr.width - 270);
+    tip.style.left = Math.max(8, left) + 'px';
+    tip.style.top = (bar.top - cr.top - tip.offsetHeight - 8) + 'px';
+    tl.querySelectorAll('.row').forEach(function (x) { x.classList.toggle('on', x === g); });
+  }
+  function hideTip() { tip.style.opacity = 0; tl.querySelectorAll('.row').forEach(function (x) { x.classList.remove('on'); }); }
+  tl.querySelectorAll('.row').forEach(function (g) {
+    g.addEventListener('mousemove', function (e) { showTip(g, e); });
+    g.addEventListener('mouseleave', hideTip);
+    g.addEventListener('click', function (e) { showTip(g, e); });
+    g.addEventListener('focus', function () { showTip(g); });
+    g.addEventListener('blur', hideTip);
+  });
+
+  var tbody = document.querySelector('#tl-table tbody');
+  tbody.innerHTML = rows.map(function (r) {
+    return '<tr><td>' + r.n + '</td><td>' + r.w + '</td><td>' + (r.type === 'edu' ? 'Education' : 'Work') + '</td><td>' + r.d + '</td></tr>';
+  }).join('');
+  var tg = document.getElementById('tl-toggle');
+  tg.addEventListener('click', function () {
+    var on = tg.getAttribute('aria-pressed') !== 'true';
+    tg.setAttribute('aria-pressed', on); tg.textContent = on ? 'Show as chart' : 'Show as table';
+    tl.hidden = on; document.getElementById('tl-table').hidden = !on; hideTip();
+  });
+
+  /* ---------- Experience filters ---------- */
+  var names = { data: 'Data', rec: 'Recruitment', init: 'Initiative', ppl: 'People' };
+  var items = document.querySelectorAll('#experience li[data-tags]');
+  items.forEach(function (li) {
+    li.dataset.tags.split(' ').forEach(function (t) { li.insertAdjacentHTML('beforeend', '<span class="t">' + names[t] + '</span>'); });
+  });
+  var countEl = document.getElementById('count');
+  function filter(f) {
+    var n = 0;
+    items.forEach(function (li) {
+      var match = f === 'all' || li.dataset.tags.split(' ').indexOf(f) > -1;
+      if (match) n++;
+      li.classList.toggle('dim', !match);
+      li.classList.toggle('hit', match && f !== 'all');
+    });
+    countEl.textContent = f === 'all' ? items.length + ' achievements across 4 roles' : n + ' of ' + items.length + ' achievements match';
+    document.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.f === f ? 'true' : 'false'); });
+  }
+  document.querySelectorAll('.chip').forEach(function (c) { c.addEventListener('click', function () { filter(c.dataset.f); }); });
+  filter('all');
+
+  /* ---------- Active nav link ---------- */
+  var links = document.querySelectorAll('nav a'), secs = [];
+  links.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) secs.push([a, s]); });
+  window.addEventListener('scroll', function () {
+    var cur = null;
+    secs.forEach(function (p) { if (p[1].getBoundingClientRect().top < 120) cur = p[0]; });
+    links.forEach(function (a) { a.classList.toggle('active', a === cur); });
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
